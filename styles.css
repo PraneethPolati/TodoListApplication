@@ -1,0 +1,153 @@
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif; /* Use a modern font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #ff6b6b, #f8c291, #82ccdd); /* Gradient background */
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Gradient animation for dynamic background effect */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container styles */
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Header styles */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Separator line */
+hr {
+    border: 0;
+    height: 2px;
+    background: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+/* Input fields and dropdown */
+input[type="text"], input[type="date"], select {
+    width: 80%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Input focus effect */
+input[type="text"]:focus, input[type="date"]:focus, select:focus {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 8px rgba(255, 107, 107, 0.5);
+}
+
+/* Button styles */
+button {
+    padding: 12px 25px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #ff6b6b;
+    transform: translateY(-2px);
+}
+
+/* Todo list styles */
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.todo-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+/* Completed tasks style */
+.todo-item.completed {
+    text-decoration: line-through;
+    color: gray;
+    background-color: #d1d8e0;
+}
+
+/* Button within the todo item */
+.todo-item span {
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+/* Hover effect for span elements */
+.todo-item span:hover {
+    text-decoration: underline;
+    color: #ff6b6b;
+}
+
+/* Specific styles for 'Delete', 'Edit', and 'Complete' */
+.todo-item span:nth-child(2) { color: red; }
+.todo-item span:nth-child(3) { color: blue; }
+.todo-item span:nth-child(4) { color: green; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+    input[type="text"], input[type="date"], select {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em; /* Smaller font size for mobile */
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
